@@ -10,21 +10,21 @@
         darwin.inputs.nixpkgs.follows = "nixpkgs";
     };
     outputs = inputs : {
-        darwinConfigurations.mac624172 = inputs.darwin.lib.darwinSystem {
-            system = "aarch64-darwin";
-            pkgs = import inputs.nixpkgs { system = "aarch64-darwin"; };
+        darwinConfigurations.askesmac = inputs.darwin.lib.darwinSystem {
+            system = "x86_64-darwin";
+            pkgs = import inputs.nixpkgs { system = "x86_64-darwin"; };
             modules = [
                 ./modules/darwin
                 inputs.home-manager.darwinModules.home-manager
                 {
-                    users.users.nobr = {
-                        name = "nobr";
-                        home = "/Users/nobr";
+                    users.users.askebrunken = {
+                        name = "askebrunken";
+                        home = "/Users/askebrunken";
                     };
                     home-manager = {
                         useGlobalPkgs = true;
                         useUserPackages = true;
-                        users.nobr.imports = [ ./modules/home-manager ];
+                        users.askebrunken.imports = [ ./modules/home-manager ];
                     };
                 }
             ];

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
     programs.zsh.enable = true;
     programs.fish.enable = true;
-    environment.shells = with pkgs; [ zsh bash fish ];
+    environment.shells = with pkgs; [ fish zsh bash ];
     nix.extraOptions = ''
         experimental-features = nix-command flakes
     '';
@@ -21,44 +21,9 @@
         caskArgs.no_quarantine = true;
         global.brewfile = true;
         brews = [
-          "libffi"
-          "pkg-config"
-          "fswatch"
-          "pdf2svg"
-          "cmake"
-          "freetype"
-          "gettext"
-          "gmp"
-          "hiredis"
-          "jpeg-turbo"
-          "jsoncpp"
-          "leveldb"
-          "libogg"
-          "libpng"
-          "libvorbis"
-          "luajit"
-          "zstd"
-          "gettext"
-          # "pandoc"
         ];
         casks = [
             "spotify"
-            "freesurfer"
-            "beeper"
-            "steam"
-            "arc"
-            "brave-browser"
-            "slack"
-            "markedit"
-            "skim"
-            "obs"
-            "utm"
-            "notunes"
-            "obsidian"
-            "vagrant"
-            "protonvpn"
-            "whatsapp"
-            "lm-studio"
         ];
     };
 }
